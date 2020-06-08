@@ -11,7 +11,7 @@
 	<button onclick="reset()">Reset</button>
 <script type="text/javascript">
 //function source https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
-	function makeid(length) {
+	function make_captcha(length) {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
    var charactersLength = characters.length;
@@ -21,7 +21,7 @@
 	return result;
 }
 //function end
-document.getElementById("captcha_genrated").value=makeid(6);
+document.getElementById("captcha_genrated").value=make_captcha(6);
 function check(){
 	var captcha_genrated = document.getElementById("captcha_genrated").value;
 	var captcha_input = document.getElementById("captcha_input").value
@@ -32,7 +32,7 @@ if(captcha_input.length>0){
 }else{
 	alert("Captcha Not Matched Try Again");
 	document.getElementById("captcha_input").value= "";
-	document.getElementById("captcha_genrated").value=makeid(6);
+	document.getElementById("captcha_genrated").value=make_captcha(6);
 
 }
 }else{
@@ -40,7 +40,7 @@ if(captcha_input.length>0){
 }
 }
 function reset(){
-	document.getElementById("captcha_genrated").value=makeid(6);
+	document.getElementById("captcha_genrated").value=make_captcha(6);
 	document.getElementById("captcha_input").value= "";
 }
 </script>
